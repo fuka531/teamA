@@ -53,13 +53,11 @@ void MainLoop(void) {
 
 
 //Å@---ëÂèü---
-
+	
+	Base::CheckKillAll();
 	Base::DrawAll();
 	Base::UpdateAll();
-
-
-
-
+	Base::CollisionAll();
 
 
 
@@ -179,14 +177,14 @@ void Init(void)
 //Å@---ëÂèü---
 	ADD_RESOURCE("Ground", CImage::CreateImage("Image/ground1.png")); 
 	ADD_RESOURCE("Back", CImage::CreateImage("Image/background1.png"));
-	ADD_RESOURCE("Key", CImage::CreateImage("Image/Key1.png"));
+	ADD_RESOURCE("Key", CImage::CreateImage("Image/Key.png"));
 
 
 
 
 
 	Base::Add(new Field());
-	//Base::Add(new Item());
+	Base::Add(new Item());
 
 
 

@@ -8,4 +8,5 @@ public:
 	Item();
 	void Update();
 	void Draw();
+	void Collsion(Base* b);
 };
