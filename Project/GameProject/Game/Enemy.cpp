@@ -7,7 +7,6 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
     m_img = COPY_RESOURCE("Enemy", CImage);
     //再生アニメーション設定
     m_img.ChangeAnimation(0);
-    //座標設定
     m_pos_old = m_pos = p;
     m_flip = flip;
     m_is_ground = true;
