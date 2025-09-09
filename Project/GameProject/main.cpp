@@ -1,3 +1,13 @@
+#include "Base/Base.h"
+#include"Game/Field.h"
+//--------------------------------------------
+//グローバル変数領域
+//--------------------------------------------
+
+
+
+
+
 
 
 
@@ -38,6 +48,8 @@ void MainLoop(void) {
 
 //　---大勝---
 
+	Base::DrawAll();
+	Base::UpdateAll();
 
 
 
@@ -50,8 +62,7 @@ void MainLoop(void) {
 
 
 
-
-
+              
 
 
 
@@ -160,15 +171,14 @@ void Init(void)
 
 
 //　---大勝---
+	ADD_RESOURCE("Ground", CImage::CreateImage("Image/ground1.png")); 
+	ADD_RESOURCE("Back", CImage::CreateImage("Image/background1.png"));
 
 
 
 
 
-
-
-
-
+	Base::Add(new Field());
 
 
 
