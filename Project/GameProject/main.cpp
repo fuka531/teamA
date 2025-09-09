@@ -20,11 +20,6 @@ void MainLoop(void) {
 	//--------------------------------------------------------------
 	//	---ñÏÅXè„---
 
-	Base::CheckKillAll();
-	Base::UpdateAll();
-	Base::CollisionAll();
-	Base::DrawAll();
-
 
 
 
