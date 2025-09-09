@@ -1,4 +1,5 @@
-
+#include "Base/Base.h"
+#include "Game/Enemy.h"
 
 
 void MainLoop(void) {
@@ -6,8 +7,12 @@ void MainLoop(void) {
 	//ゲーム中の動きはここに書く
 	//ゲーム中はこの関数_を1秒間に60回呼び出している
 	//--------------------------------------------------------------
-	//	---野々村---
+	//	---野々上---
 
+	Base::CheckKillAll();
+	Base::UpdateAll();
+	Base::CollisionAll();
+	Base::DrawAll();
 
 
 
