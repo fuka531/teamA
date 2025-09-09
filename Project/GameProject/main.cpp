@@ -1,4 +1,15 @@
 #include "Game/Player.h"
+#include "Base/Base.h"
+#include"Game/Field.h"
+#include"Game/Item.h"
+//--------------------------------------------
+//グローバル変数領域
+//--------------------------------------------
+
+
+
+
+
 
 
 
@@ -38,6 +49,11 @@ void MainLoop(void) {
 
 
 //　---大勝---
+	
+	Base::CheckKillAll();
+	Base::DrawAll();
+	Base::UpdateAll();
+	Base::CollisionAll();
 
 
 
@@ -46,13 +62,7 @@ void MainLoop(void) {
 
 
 
-
-
-
-
-
-
-
+              
 
 
 
@@ -161,16 +171,16 @@ void Init(void)
 
 
 //　---大勝---
+	ADD_RESOURCE("Ground", CImage::CreateImage("Image/ground1.png")); 
+	ADD_RESOURCE("Back", CImage::CreateImage("Image/background1.png"));
+	ADD_RESOURCE("Key", CImage::CreateImage("Image/Key.png"));
 
 
 
 
 
-
-
-
-
-
+	Base::Add(new Field());
+	Base::Add(new Item());
 
 
 

@@ -4,6 +4,7 @@ enum {
     eType_Player,
     eType_Enemy,
     eType_Goal,
+    eType_Item,
     eType_Player_Attack,
     eType_Enemy_Attack,
     eType_Effect,
@@ -16,6 +17,7 @@ class Base {
 public:
     int m_type;         //オブジェクトの種類
     CVector2D m_pos;    //座標
+    CVector2D m_pos_old;
     float m_rad;        //当たり判定：円半径
     CVector2D m_vec;    //移動ベクトル
     CRect   m_rect;     //矩形
