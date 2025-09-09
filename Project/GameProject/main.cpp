@@ -1,5 +1,6 @@
 #include "Base/Base.h"
 #include"Game/Field.h"
+#include"Game/Item.h"
 //--------------------------------------------
 //グローバル変数領域
 //--------------------------------------------
@@ -173,13 +174,14 @@ void Init(void)
 //　---大勝---
 	ADD_RESOURCE("Ground", CImage::CreateImage("Image/ground1.png")); 
 	ADD_RESOURCE("Back", CImage::CreateImage("Image/background1.png"));
+	ADD_RESOURCE("Key", CImage::CreateImage("Image/Key1.png"));
 
 
 
 
 
 	Base::Add(new Field());
-
+	//Base::Add(new Item());
 
 
 
