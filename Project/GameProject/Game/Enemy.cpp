@@ -11,7 +11,7 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
     m_pos_old = m_pos = p;
     m_flip = flip;
     m_is_ground = true;
-    // m_rect = CRect(-32, -64, 32, 0);
+    m_rect = CRect(-32, -64, 32, 0);
     m_img.SetCenter(32, 32);
     m_img.SetSize(64, 64);
 }
@@ -104,7 +104,7 @@ void Enemy::Draw() {
 
 void Enemy::Collision(Base* b) {
     switch (b->m_type) {
-   /* case eType_Field:
+   /* case eType_Field: 
         if (Field* f = dynamic_cast<Field*>(b)) {
             int t;
             t = f->CollisionRect(b, f);
@@ -120,6 +120,8 @@ void Enemy::Collision(Base* b) {
                 m_is_ground = true;
             }
         }
+        break;
+    case eType_Player:
         break;
         */
     }
