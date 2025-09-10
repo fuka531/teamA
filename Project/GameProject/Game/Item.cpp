@@ -20,6 +20,6 @@ void Item::Draw()
 	m_key.Draw();
 }
 
-void Item::Collsion(Base* b)
+void Item::Collision(Base* b)
 {
 }

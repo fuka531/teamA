@@ -29,7 +29,9 @@
     <ClInclude Include="Title\Hands.h">
       <Filter>Title</Filter>
     </ClInclude>
-  </ItemGroup>
+    <ClInclude Include="Game\Enemy.h">
+      <Filter>Game</Filter>
+    </ClInclude>  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Base\Base.cpp">
@@ -59,7 +61,9 @@
     <ClCompile Include="Title\Hands.cpp">
       <Filter>Title</Filter>
     </ClCompile>
-  </ItemGroup>
+	<ClCompile Include="Game\Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>  </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
       <UniqueIdentifier>{c927bea6-8a28-4abd-acc6-e19c092cb6c5}</UniqueIdentifier>

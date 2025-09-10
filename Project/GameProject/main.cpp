@@ -3,10 +3,10 @@
 #include"Game/Field.h"
 #include"Game/Item.h"
 #include"Game/Goal.h"
+
 #include"Title/Title.h"
-#include"Game/Clear.h"
-//--------------------------------------------
-//グローバル変数領域
+#include "Game/Enemy.h"//--------------------------------------------
+#include"Game/Clear.h"//グローバル変数領域
 //--------------------------------------------
 
 
@@ -17,12 +17,11 @@
 
 
 void MainLoop(void) {
-	//--------------------------------------------------------------
-	//ゲーム中の動きはここに書く
-	//ゲーム中はこの関数_を1秒間に60回呼び出している
-	//--------------------------------------------------------------
-	//	---野々村---
-
+//--------------------------------------------------------------
+//ゲーム中の動きはここに書く
+//ゲーム中はこの関数_を1秒間に60回呼び出している
+//--------------------------------------------------------------
+//	---野々上---
 
 
 
@@ -142,14 +141,14 @@ void Init(void)
 	//初期化の命令を書く
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
-//	---野々村---
+//	---野々上---
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
 
 
 
 
 
-
-
+	Base::Add(new Enemy(CVector2D(100,100),true));
 
 
 
@@ -179,7 +178,6 @@ void Init(void)
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/door.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/title2.png"));
 	ADD_RESOURCE("Hands", CImage::CreateImage("Image/left.png"));
-	ADD_RESOURCE("Clear", CImage::CreateImage("Image/open.png"));
 
 
 

@@ -1,17 +1,19 @@
 #include "Enemy.h"
 #include "Field.h"
 
+
 Enemy::Enemy(const CVector2D& p, bool flip) :
     Base(eType_Enemy) {
     //画像複製
     m_img = COPY_RESOURCE("Enemy", CImage);
     //再生アニメーション設定
     m_img.ChangeAnimation(0);
-    //座標設定
     m_pos_old = m_pos = p;
     m_flip = flip;
     m_is_ground = true;
-    m_rect = CRect(-32, -128, 32, 0);
+    m_rect = CRect(-32, -64, 32, 0);
+    m_img.SetCenter(32, 32);
+    m_img.SetSize(64, 64);
 }
 
 
@@ -99,9 +101,29 @@ void Enemy::Draw() {
     DrawRect();
 
 }
-
+/*
 void Enemy::Collision(Base* b) {
+  
     switch (b->m_type) {
-
+    case eType_Field:
+        if (Field* f = dynamic_cast<Field*>(b)) {
+            int t;
+            t = f->CollisionRect(b, f);
+            if (t != 0) {
+                m_pos.x = m_pos_old.x;
+            }
+            t = f->CollisionRect(b, f);
+            if (t != 0) {
+                m_pos.y = m_pos_old.y;
+                //落下速度リセット
+                m_vec.y = 0;
+                //接地フラグON
+                m_is_ground = true;
+            }
+        }
+        break;
+    case eType_Player:
+        break;
     }
-}
+   
+}  */

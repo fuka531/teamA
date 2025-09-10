@@ -19,7 +19,7 @@ private:
     };
 
     int m_state;
-
+        
 	CImage m_img;
 	bool m_flip;
 	bool m_is_ground;
