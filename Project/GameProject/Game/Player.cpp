@@ -3,8 +3,12 @@
 
 
 static TexAnim _idle[] = {
-	{ 0,5 },
-	{ 1,5 },
+	{ 0,4 },
+	//{ 1,5 },
+	{ 2,4 },
+	//{ 3,5 },
+	{ 4,4 },
+	//{ 5,5 },
 
 };
 
@@ -17,6 +21,7 @@ static TexAnim _jumpDOWN[] = {
 	{ 7,10 },
 
 };
+
 TexAnimData Player::_anim_data[] = {
 	ANIMDATA(_idle),
 	ANIMDATA(_jumpUP),
@@ -33,9 +38,9 @@ Player::Player(const CVector2D& pos, bool flip) :Base(eType_Player)
 	//座標設定
 	m_pos = pos;
 	//画像サイズ
-	m_img.SetSize(64, 64);
+	m_img.SetSize(400,400);
 	//中心位置設定
-	m_img.SetCenter(32, 64);
+	m_img.SetCenter(200,400);
 	//着地フラグ
 	m_is_ground = true;
 
@@ -85,8 +90,8 @@ void Player::Update()
 		m_is_ground = false;
 
 	//重力による落下
-	m_vec.y += GRAVITY;
-	m_pos += m_vec;
+	//m_vec.y += GRAVITY;
+	//m_pos += m_vec;
 
 	//スクロール設定
 	m_scroll.x = m_pos.x - 1280 / 2 / 3;
