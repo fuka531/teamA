@@ -101,9 +101,9 @@ void Enemy::Draw() {
     DrawRect();
 
 }
-/*
+
 void Enemy::Collision(Base* b) {
-  
+  /*
     switch (b->m_type) {
     case eType_Field:
         if (Field* f = dynamic_cast<Field*>(b)) {
@@ -125,5 +125,5 @@ void Enemy::Collision(Base* b) {
     case eType_Player:
         break;
     }
-   
-}  */
+    */
+}  
