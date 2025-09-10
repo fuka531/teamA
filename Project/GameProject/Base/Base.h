@@ -9,6 +9,7 @@ enum {
     eType_Enemy_Attack,
     eType_Effect,
     eType_Scene,
+    eType_Clear,
 };
 
 //d—Í‰Á‘¬“x

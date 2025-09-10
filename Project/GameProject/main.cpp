@@ -4,6 +4,7 @@
 #include"Game/Item.h"
 #include"Game/Goal.h"
 #include"Title/Title.h"
+#include"Game/Clear.h"
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
@@ -178,6 +179,7 @@ void Init(void)
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/door.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/title2.png"));
 	ADD_RESOURCE("Hands", CImage::CreateImage("Image/left.png"));
+	ADD_RESOURCE("Clear", CImage::CreateImage("Image/open.png"));
 
 
 

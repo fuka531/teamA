@@ -17,13 +17,13 @@ void Title::Update()
 	}
 
 	m_move_cnt++;
-	if (m_move_cnt == 120){
+	if (m_move_cnt == 60){
 		Base::Add(new Hands(CVector2D(100, 300)));
 	}
-	if (m_move_cnt == 240) {
+	if (m_move_cnt == 180) {
 		Base::Add(new Hands(CVector2D(1000, 600)));
 	}
-	if (m_move_cnt == 300) {
+	if (m_move_cnt == 240) {
 		Base::Add(new Hands(CVector2D(1500,200)));
 	}
 
