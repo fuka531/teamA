@@ -103,6 +103,22 @@ void Enemy::Draw() {
 
 void Enemy::Collision(Base* b) {
     switch (b->m_type) {
-
+    case eType_Field:
+        if (Field* f = dynamic_cast<Field*>(b)) {
+            int t;
+            t = f->CollisionRect(b, f);
+            if (t != 0) {
+                m_pos.x = m_pos_old.x;
+            }
+            t = f->CollisionRect(b, f);
+            if (t != 0) {
+                m_pos.y = m_pos_old.y;
+                //落下速度リセット
+                m_vec.y = 0;
+                //接地フラグON
+                m_is_ground = true;
+            }
+        }
+        break;
     }
 }
