@@ -14,6 +14,15 @@
     <ClInclude Include="Game\Item.h">
       <Filter>Game</Filter>
     </ClInclude>
+    <ClInclude Include="Game\Goal.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Title.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Result.h">
+      <Filter>Title</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -29,6 +38,15 @@
     <ClCompile Include="Game\Item.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Goal.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Title.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Result.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
@@ -36,6 +54,9 @@
     </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{355005d4-7d0d-49e4-9552-cc8ddb8d0a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{04a50bfe-ee9f-4769-a371-def0da2cd426}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

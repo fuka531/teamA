@@ -2,6 +2,7 @@
 #include "Base/Base.h"
 #include"Game/Field.h"
 #include"Game/Item.h"
+#include"Game/Goal.h"
 //--------------------------------------------
 //ÉOÉçÅ[ÉoÉãïœêîóÃàÊ
 //--------------------------------------------
@@ -173,6 +174,7 @@ void Init(void)
 	ADD_RESOURCE("Ground", CImage::CreateImage("Image/ground1.png")); 
 	ADD_RESOURCE("Back", CImage::CreateImage("Image/background1.png"));
 	ADD_RESOURCE("Key", CImage::CreateImage("Image/Key.png"));
+	ADD_RESOURCE("Goal", CImage::CreateImage("Image/door.png"));
 
 
 
@@ -180,7 +182,7 @@ void Init(void)
 
 	Base::Add(new Field());
 	Base::Add(new Item());
-
+	Base::Add(new Goal(CVector2D(2000,700)));
 
 
 
