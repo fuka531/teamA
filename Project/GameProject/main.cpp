@@ -1,3 +1,4 @@
+#include "Game/Player.h"
 #include "Base/Base.h"
 #include"Game/Field.h"
 #include"Game/Item.h"
@@ -154,7 +155,7 @@ void Init(void)
 
 
 //Å@---êAèº---
-
+	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player.png", Player::_anim_data, 32, 32));
 
 
 
