@@ -20,17 +20,30 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
-    <ClInclude Include="Game\Field.h" />
+
+    <ClInclude Include="Game\Clear.h" />
+    <ClInclude Include="Game\Enemy.h" />    <ClInclude Include="Game\Field.h" />
+    <ClInclude Include="Game\Game.h" />
+    <ClInclude Include="Game\Goal.h" />
     <ClInclude Include="Game\Player.h" />
     <ClInclude Include="Game\Item.h" />
     <ClInclude Include="Global.h" />
+    <ClInclude Include="Title\Hands.h" />
+    <ClInclude Include="Title\Title.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
+
+    <ClCompile Include="Game\Clear.cpp" />
+    <ClCompile Include="Game\Enemy.cpp" />
     <ClCompile Include="Game\Field.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="Game\Goal.cpp" />
     <ClCompile Include="Game\Player.cpp" />
     <ClCompile Include="Game\Item.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Title\Hands.cpp" />
+    <ClCompile Include="Title\Title.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE2CE3B1-49BF-46A5-9DB1-9BD5B52FE1A0}</ProjectGuid>

@@ -1,12 +1,13 @@
 #pragma once
 #include"Base/Base.h"
 
-class Item :public Base {
+class Title :public Base {
 private:
-	CImage m_key;
+	CImage m_title;
+	int m_cnt;
+	int m_move_cnt;
 public:
-	Item();
+	Title();
 	void Update();
 	void Draw();
-	void Collision(Base* b);
 };

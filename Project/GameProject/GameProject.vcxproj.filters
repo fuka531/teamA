@@ -14,7 +14,24 @@
     <ClInclude Include="Game\Item.h">
       <Filter>Game</Filter>
     </ClInclude>
-  </ItemGroup>
+    <ClInclude Include="Game\Goal.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Title.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Clear.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Game.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Title\Hands.h">
+      <Filter>Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Enemy.h">
+      <Filter>Game</Filter>
+    </ClInclude>  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Base\Base.cpp">
@@ -29,13 +46,33 @@
     <ClCompile Include="Game\Item.cpp">
       <Filter>Game</Filter>
     </ClCompile>
-  </ItemGroup>
+    <ClCompile Include="Game\Goal.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Title.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Clear.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Game.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Title\Hands.cpp">
+      <Filter>Title</Filter>
+    </ClCompile>
+	<ClCompile Include="Game\Enemy.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>  </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
       <UniqueIdentifier>{c927bea6-8a28-4abd-acc6-e19c092cb6c5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game">
       <UniqueIdentifier>{355005d4-7d0d-49e4-9552-cc8ddb8d0a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Title">
+      <UniqueIdentifier>{04a50bfe-ee9f-4769-a371-def0da2cd426}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

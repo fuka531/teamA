@@ -1,11 +1,11 @@
 #pragma once
 #include"Base/Base.h"
 
-class Item :public Base {
+class Goal :public Base {
 private:
-	CImage m_key;
+	CImage m_goal;
 public:
-	Item();
+	Goal(const CVector2D& pos);
 	void Update();
 	void Draw();
 	void Collision(Base* b);
