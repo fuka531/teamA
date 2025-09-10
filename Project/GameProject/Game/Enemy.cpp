@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "Field.h"
 
+
 Enemy::Enemy(const CVector2D& p, bool flip) :
     Base(eType_Enemy) {
     //‰æ‘œ•¡»
@@ -10,7 +11,7 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
     m_pos_old = m_pos = p;
     m_flip = flip;
     m_is_ground = true;
-   // m_rect = CRect(-32, -128, 32, 0);
+    // m_rect = CRect(-32, -64, 32, 0);
     m_img.SetCenter(32, 32);
     m_img.SetSize(64, 64);
 }
