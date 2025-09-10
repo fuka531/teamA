@@ -3,9 +3,10 @@
 #include"Game/Field.h"
 #include"Game/Item.h"
 #include"Game/Goal.h"
-
 #include"Title/Title.h"
-#include "Game/Enemy.h"//--------------------------------------------
+#include "Game/Enemy.h"
+#include"Game/Clear.h"
+//--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
 
