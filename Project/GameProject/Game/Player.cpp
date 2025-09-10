@@ -1,0 +1,118 @@
+#include "Player.h"
+#include "Field.h"
+
+
+static TexAnim _idle[] = {
+	{ 0,5 },
+	{ 1,5 },
+
+};
+
+static TexAnim  _jumpUP[] = {
+	{ 7,10 },
+
+
+};
+static TexAnim _jumpDOWN[] = {
+	{ 7,10 },
+
+};
+TexAnimData Player::_anim_data[] = {
+	ANIMDATA(_idle),
+	ANIMDATA(_jumpUP),
+	ANIMDATA(_jumpDOWN),
+};
+
+Player::Player(const CVector2D& pos, bool flip) :Base(eType_Player)
+{
+	//画像複製
+	m_img = COPY_RESOURCE("Player", CImage);
+
+	//再生アニメーション設定
+	m_img.ChangeAnimation(0);
+	//座標設定
+	m_pos = pos;
+	//画像サイズ
+	m_img.SetSize(64, 64);
+	//中心位置設定
+	m_img.SetCenter(32, 64);
+	//着地フラグ
+	m_is_ground = true;
+
+	m_flip = flip;
+	//通常状態へ
+	m_state = eState_Idle;
+	//当たり判定用矩形設定
+	m_rect = CRect(-32, -64, 32, 0);
+
+}
+void Player::StateIdle()
+{
+	//移動量
+	const float move_speed = 5;
+	//移動フラグ
+	bool move_flag = false;
+	//ジャンプ力
+	const float jump_pow = 12;
+	m_pos.x += move_speed;
+
+	//ジャンプ
+	if (m_is_ground && PUSH(CInput::eButton2)) {
+		m_vec.y = -jump_pow;
+		m_is_ground = false;
+	}
+
+}
+void Player::Draw()
+{
+	//位置設定
+	m_img.SetPos(GetScreenPos(m_pos));
+	//描画
+	m_img.Draw();
+	//当たり判定の矩形の表示
+	//Drawrect();
+}
+void Player::Update()
+{
+	switch (m_state) {
+	case eState_Idle:
+		StateIdle();
+		break;
+	}
+
+	//落ちていたら落下中状態へ移行
+	if (m_is_ground && m_vec.y > GRAVITY * 4)
+		m_is_ground = false;
+
+	//重力による落下
+	m_vec.y += GRAVITY;
+	m_pos += m_vec;
+
+	//スクロール設定
+	m_scroll.x = m_pos.x - 1280 / 2 / 3;
+	//アニメーション更新
+	m_img.UpdateAnimation();
+
+}
+/*void Player::Collision(Base* b)
+{
+	switch(b ->m_type) {
+	case eType_Field:
+		if (Field* f = dynamic_cast<Field*>(b)) {
+			if (m_pos.y > f->GetGroundY()) {
+				m_pos.y = f->GetGroundY();
+				m_vec.y = 0;
+				m_is_ground = true;
+
+			}
+			break;
+		}
+	case eType_Enemy:
+		if (Base::Collision(this, b)) {
+			SetKill();
+			b->SetKill();
+		}
+		break;
+	}
+}
+*/
