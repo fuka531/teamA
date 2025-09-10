@@ -3,6 +3,7 @@
 #include"Game/Field.h"
 #include"Game/Item.h"
 #include"Game/Goal.h"
+#include"Title/Title.h"
 //--------------------------------------------
 //ÉOÉçÅ[ÉoÉãïœêîóÃàÊ
 //--------------------------------------------
@@ -175,14 +176,17 @@ void Init(void)
 	ADD_RESOURCE("Back", CImage::CreateImage("Image/background1.png"));
 	ADD_RESOURCE("Key", CImage::CreateImage("Image/Key.png"));
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/door.png"));
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/title2.png"));
+	ADD_RESOURCE("Hands", CImage::CreateImage("Image/left.png"));
 
 
 
 
 
-	Base::Add(new Field());
-	Base::Add(new Item());
-	Base::Add(new Goal(CVector2D(2000,700)));
+	//Base::Add(new Field());
+	//Base::Add(new Item());
+	//Base::Add(new Goal(CVector2D(2000,700)));
+	Base::Add(new Title());
 
 
 
