@@ -140,7 +140,7 @@ void Init(void)
 	//ゲーム起動時に一度だけ呼ばれる
 	//-----------------------------------------------------
 //	---野々上---
-	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/enemy.png"));
+	ADD_RESOURCE("Enemy", CImage::CreateImage("Image/Enemy.png"));
 
 
 
