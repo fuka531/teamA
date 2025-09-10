@@ -103,7 +103,7 @@ void Enemy::Draw() {
 
 void Enemy::Collision(Base* b) {
     switch (b->m_type) {
-    case eType_Field:
+   /* case eType_Field:
         if (Field* f = dynamic_cast<Field*>(b)) {
             int t;
             t = f->CollisionRect(b, f);
@@ -120,5 +120,6 @@ void Enemy::Collision(Base* b) {
             }
         }
         break;
+        */
     }
 }
