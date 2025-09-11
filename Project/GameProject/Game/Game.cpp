@@ -5,6 +5,7 @@
 #include "Enemy.h"
 #include "Player.h"
 #include "object.h"
+
 Game::Game():Base(eType_Scene)
 {
 	Base::Add(new Field());
@@ -15,7 +16,6 @@ Game::Game():Base(eType_Scene)
 
 
 	Base::Add(new Enemy(CVector2D(1500, 1000), true));
-	Base::Add(new Player(CVector2D(300, 1000), false));}
 
 void Game::Update()
 {
