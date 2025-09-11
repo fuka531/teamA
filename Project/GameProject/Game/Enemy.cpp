@@ -33,7 +33,7 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
 
 void Enemy::StateIdle()
 {
-    const float move_speed = 6;
+    const float move_speed = 8;
 
     m_pos.x += -move_speed;
     /*bool move_flag = false;
@@ -93,24 +93,16 @@ void Enemy::Collision(Base* b) {
     switch (b->m_type) {
     case eType_Field:
         if (Field* f = dynamic_cast<Field*>(b)) {
-            int t;
-            t = f->CollisionRect(b, f);
-            if (t != 0) {
-                m_pos.x = m_pos_old.x;
-            }
-            t = f->CollisionRect(b, f);
-            if (t != 0) {
-                m_pos.y = m_pos_old.y;
-                //落下速度リセット
+            if (m_pos.y > f->GetGroundY()) {
+                m_pos.y = f->GetGroundY();
                 m_vec.y = 0;
-                //接地フラグON
                 m_is_ground = true;
+
             }
-        }
         break;
     case eType_Player:
         if (Base::CollisionCircle(this,b)) {
-
+            SetKill();
         }
         break;
     }
