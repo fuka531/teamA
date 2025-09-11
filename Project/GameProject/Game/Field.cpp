@@ -5,6 +5,8 @@ Field::Field() :Base(eType_Field)
 	m_img = COPY_RESOURCE("Ground", CImage);
 	m_back = COPY_RESOURCE("Back", CImage);
 	m_groundscroll = 0;
+	m_cnt = 0;
+	m_ground_y = 850;
 }
 
 void Field::Update()
