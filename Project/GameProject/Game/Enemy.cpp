@@ -88,8 +88,8 @@ void Enemy::Draw() {
 }
 
 void Enemy::Collision(Base* b) {
-  
-    
+
+
     switch (b->m_type) {
     case eType_Field:
         if (Field* f = dynamic_cast<Field*>(b)) {
@@ -99,11 +99,12 @@ void Enemy::Collision(Base* b) {
                 m_is_ground = true;
 
             }
-        break;
+            break;
+        }
     case eType_Player:
-        if (Base::CollisionCircle(this,b)) {
+        if (Base::CollisionCircle(this, b)) {
             SetKill();
         }
         break;
+        }
     }
-}  
