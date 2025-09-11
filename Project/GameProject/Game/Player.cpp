@@ -45,8 +45,6 @@ Player::Player(const CVector2D& pos, bool flip) :Base(eType_Player)
 	m_is_ground = true;
 
 	m_flip = flip;
-	//’Êíó‘Ô‚Ö
-	m_state = eState_Idle;
 	//“–‚½‚è”»’è—p‹éŒ`İ’è
 	m_rect = CRect(-32, -64, 32, 0);
 
