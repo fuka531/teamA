@@ -34,7 +34,9 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
 void Enemy::StateIdle()
 {
     const float move_speed = 4;
-    bool move_flag = false;
+
+    m_pos.x += -move_speed;
+    /*bool move_flag = false;
     Base* player = Base::FindObject(eType_Player);
     if (player) {
         if (player->m_pos.x < m_pos.x - 64) {
@@ -53,7 +55,7 @@ void Enemy::StateIdle()
             move_flag = true;
         }
     }
-
+    */
 }
 
 
@@ -68,6 +70,9 @@ void Enemy::Update() {
     //アニメーション更新
     m_img.UpdateAnimation();
 
+    if (m_pos.x < 0) {
+        SetKill();
+    }
 }
 
 void Enemy::Draw() {
