@@ -5,7 +5,7 @@ class Item :public Base {
 private:
 	CImage m_key;
 public:
-	Item();
+	Item(const CVector2D& pos);
 	void Update();
 	void Draw();
 	void Collision(Base* b);
