@@ -20,7 +20,5 @@ public:
     void Draw();
     void Collision(Base* b);
 
-    void StateIdle();
-
     static TexAnimData _anim_data[];
 };

@@ -31,34 +31,6 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
 }
 
 
-void Enemy::StateIdle()
-{
-    const float move_speed = 8;
-
-    m_pos.x += -move_speed;
-    /*bool move_flag = false;
-    Base* player = Base::FindObject(eType_Player);
-    if (player) {
-        if (player->m_pos.x < m_pos.x - 64) {
-            //移動量を設定
-            m_pos.x += -move_speed;
-            //反転フラグ
-            m_flip = true;
-            move_flag = true;
-        }
-        //右移動
-        if (player->m_pos.x > m_pos.x + 64) {
-            //移動量を設定
-            m_pos.x += move_speed;
-            //反転フラグ
-            m_flip = false;
-            move_flag = true;
-        }
-    }
-    */
-}
-
-
 void Enemy::Update() {
     m_pos_old = m_pos;
     //落ちていたら落下状態へ移行
@@ -70,9 +42,8 @@ void Enemy::Update() {
     //アニメーション更新
     m_img.UpdateAnimation();
 
-    if (m_pos.x < -200) {
-        SetKill();
-    }
+    const float move_speed = 5;
+    m_pos.x += move_speed;
 }
 
 void Enemy::Draw() {
@@ -88,8 +59,6 @@ void Enemy::Draw() {
 }
 
 void Enemy::Collision(Base* b) {
-  
-    
     switch (b->m_type) {
     case eType_Field:
         if (Field* f = dynamic_cast<Field*>(b)) {
@@ -97,12 +66,12 @@ void Enemy::Collision(Base* b) {
                 m_pos.y = f->GetGroundY();
                 m_vec.y = 0;
                 m_is_ground = true;
-
+            }
             }
         break;
     case eType_Player:
         if (Base::CollisionCircle(this,b)) {
-            SetKill();
+
         }
         break;
     }
