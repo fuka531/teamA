@@ -18,7 +18,7 @@ Game::Game():Base(eType_Scene)
 	Base::Add(new Enemy(CVector2D(1500, 1000), true));
 
 void Game::Update()
-{
+	{
 	m_cnt--;
 	if (m_cnt <= 0) {
 		Base::Add(new Object(CVector2D(m_scroll.x + SCREEN_WIDTH + 256, 850), true));
