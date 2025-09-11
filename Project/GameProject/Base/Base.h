@@ -1,7 +1,6 @@
 #pragma once
 enum {
     eType_Field,
-   
     eType_Enemy,
     eType_Goal,
     eType_Item,

@@ -5,13 +5,12 @@ Field::Field() :Base(eType_Field)
 	m_img = COPY_RESOURCE("Ground", CImage);
 	m_back = COPY_RESOURCE("Back", CImage);
 	m_groundscroll = 0;
-	m_cnt = 0;
 	m_ground_y = 1000;
 }
 
 void Field::Update()
 {
-	m_groundscroll += 0.5;
+	m_groundscroll += 1.3;
 }
 
 void Field::Draw()
