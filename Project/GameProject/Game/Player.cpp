@@ -74,7 +74,7 @@ void Player::Draw()
 	//•`‰æ
 	m_img.Draw();
 	//“–‚½‚è”»’è‚Ì‹éŒ`‚Ì•\Ž¦
-	//Drawrect();
+	DrawRect();
 }
 void Player::Update()
 {
@@ -100,7 +100,7 @@ void Player::Update()
 }
 void Player::Collision(Base* b)
 {
-	switch(b ->m_type) {
+	switch (b->m_type) {
 	case eType_Field:
 		if (Field* f = dynamic_cast<Field*>(b)) {
 			if (m_pos.y > f->GetGroundY()) {
@@ -109,10 +109,10 @@ void Player::Collision(Base* b)
 				m_is_ground = true;
 
 			}
-			break;
 		}
+		break;
 	case eType_Object:
-		if (auto s = dynamic_cast<Base*>(b)) {
+		if (Base::CollisionRect(this,b)) {
 			SetKill();
 			b->SetKill();
 		}
