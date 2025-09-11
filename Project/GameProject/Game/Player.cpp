@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Field.h"
 #include"Clear.h"
+#include"Gameover.h"
 
 
 static TexAnim _idle[] = {
@@ -126,9 +127,13 @@ void Player::Collision(Base* b)
 		}
 		break;
 	case eType_Goal:
-		if (m_haskey==true && Base::CollisionRect(this, b)) {
+		if (m_haskey == true && Base::CollisionRect(this, b)) {
 			KillAll();
 			Base::Add(new Clear());
+		}
+	    else if (m_haskey == false && Base::CollisionRect(this, b)) {
+			KillAll();
+			Base::Add(new Gameover());
 		}
 	}
 }
