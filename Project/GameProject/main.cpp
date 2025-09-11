@@ -7,6 +7,7 @@
 #include "Game/Enemy.h"
 #include"Game/Clear.h"
 #include"Game/object.h"
+#include"Game/Gameover.h"
 //--------------------------------------------
 //ÉOÉçÅ[ÉoÉãïœêîóÃàÊ
 //--------------------------------------------
@@ -176,7 +177,8 @@ void Init(void)
 	ADD_RESOURCE("Goal", CImage::CreateImage("Image/door.png"));
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/title2.png"));
 	ADD_RESOURCE("Hands", CImage::CreateImage("Image/left.png"));
-	ADD_RESOURCE("Clear", CImage::CreateImage("Image/open1.png"));
+	ADD_RESOURCE("Clear", CImage::CreateImage("Image/open.png"));
+	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/gameover.png"));
 
 
 

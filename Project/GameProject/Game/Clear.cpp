@@ -1,4 +1,5 @@
 #include "Clear.h"
+#include"Title/Title.h"
 
 Clear::Clear():Base(eType_Clear)
 {
@@ -7,6 +8,10 @@ Clear::Clear():Base(eType_Clear)
 
 void Clear::Update()
 {
+	if (PUSH(CInput::eButton10)) {
+		SetKill();
+		Base::Add(new Title());
+	}
 }
 
 void Clear::Draw()
