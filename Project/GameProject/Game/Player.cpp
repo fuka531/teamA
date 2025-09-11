@@ -74,7 +74,7 @@ void Player::Draw()
 	//•`‰æ
 	m_img.Draw();
 	//“–‚½‚è”»’è‚Ì‹éŒ`‚Ì•\¦
-	DrawRect();
+	//DrawRect();
 }
 void Player::Update()
 {
@@ -111,11 +111,11 @@ void Player::Collision(Base* b)
 			}
 		}
 		break;
-	case eType_Object:
-		if (Base::CollisionRect(this,b)) {
-			SetKill();
-			b->SetKill();
-		}
+	//case eType_Object:
+	//	if (Base::CollisionRect(this,b)) {
+		//	SetKill();
+			//b->SetKill();
+		//}
 		break;
 	}
 }
