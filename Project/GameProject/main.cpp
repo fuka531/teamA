@@ -6,6 +6,7 @@
 #include"Title/Title.h"
 #include "Game/Enemy.h"
 #include"Game/Clear.h"
+#include"Game/object.h"
 //--------------------------------------------
 //ƒOƒ[ƒoƒ‹•Ï”—Ìˆæ
 //--------------------------------------------
@@ -158,8 +159,7 @@ void Init(void)
 	ADD_RESOURCE("Player", CImage::CreateImage("Image/Player3.png", Player::_anim_data, 80, 80));
 	Base::Add(new Player(CVector2D(300,1000), false));
 
-
-
+	ADD_RESOURCE("Object", CImage::CreateImage("Image/object.png"));
 
 
 
