@@ -70,6 +70,9 @@ void Enemy::Update() {
     //アニメーション更新
     m_img.UpdateAnimation();
 
+    if (m_pos.x < 0) {
+        SetKill();
+    }
 }
 
 void Enemy::Draw() {
