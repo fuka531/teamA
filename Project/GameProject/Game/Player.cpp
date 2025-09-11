@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Field.h"
+#include"Clear.h"
 
 
 static TexAnim _idle[] = {
@@ -43,6 +44,7 @@ Player::Player(const CVector2D& pos, bool flip) :Base(eType_Player)
 	m_img.SetCenter(200,400);
 	//着地フラグ
 	m_is_ground = true;
+	m_haskey = false;
 
 	m_flip = flip;
 	//当たり判定用矩形設定
@@ -112,11 +114,22 @@ void Player::Collision(Base* b)
 		}
 		break;
 	case eType_Object:
-		if (Base::CollisionRect(this,b)) {
-			SetKill();
-			b->SetKill();
+		if (Base::CollisionRect(this, b)) {
+			//SetKill();
+			//b->SetKill();
 		}
 		break;
+	case eType_Item:
+		if (Base::CollisionRect(this, b)) {
+			b->SetKill();
+			m_haskey = true;
+		}
+		break;
+	case eType_Goal:
+		if (m_haskey==true && Base::CollisionRect(this, b)) {
+			KillAll();
+			Base::Add(new Clear());
+		}
 	}
 }
 

@@ -9,7 +9,7 @@
 Game::Game() :Base(eType_Scene)
 {
 	Base::Add(new Field());
-	Base::Add(new Item(CVector2D(3500,950)));
+	Base::Add(new Item(CVector2D(3500,500)));
 	Base::Add(new Goal(CVector2D(5000, 700)));
 	Base::Add(new Player(CVector2D(300, 1000), false));
 	m_cnt = 0;
