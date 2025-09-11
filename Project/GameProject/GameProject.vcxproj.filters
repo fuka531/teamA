@@ -31,7 +31,11 @@
     </ClInclude>
     <ClInclude Include="Game\Enemy.h">
       <Filter>Game</Filter>
-    </ClInclude>  </ItemGroup>
+    </ClInclude>
+    <ClInclude Include="Game\object.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Base\Base.cpp">
@@ -61,9 +65,13 @@
     <ClCompile Include="Title\Hands.cpp">
       <Filter>Title</Filter>
     </ClCompile>
-	<ClCompile Include="Game\Enemy.cpp">
+    <ClCompile Include="Game\Enemy.cpp">
       <Filter>Game</Filter>
-    </ClCompile>  </ItemGroup>
+    </ClCompile>
+    <ClCompile Include="Game\object.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+  </ItemGroup>
   <ItemGroup>
     <Filter Include="Base">
       <UniqueIdentifier>{c927bea6-8a28-4abd-acc6-e19c092cb6c5}</UniqueIdentifier>

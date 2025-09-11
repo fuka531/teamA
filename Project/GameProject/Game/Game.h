@@ -5,4 +5,5 @@ class Game :public Base {
 public:
 	Game();
 	void Update();
+	int  m_cnt;
 };

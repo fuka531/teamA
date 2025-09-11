@@ -10,6 +10,7 @@ enum {
     eType_Effect,
     eType_Scene,
     eType_Clear,
+	eType_Object,
 };
 
 //d—Í‰Á‘¬“x
