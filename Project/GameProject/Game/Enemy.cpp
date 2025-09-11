@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "Field.h"
+#include "Player.h"
 
 static TexAnim _run[] = {
     { 0,4 },
@@ -24,9 +25,9 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
     m_pos_old = m_pos = p;
     m_flip = flip;
     m_is_ground = true;
-    m_rect = CRect(-32, -64, 32, 0);
-    m_img.SetCenter(50, 100);
-    m_img.SetSize(100, 100);
+    m_rect = CRect(-100, -200, 100, 0);
+    m_img.SetCenter(100, 200);
+    m_img.SetSize(200, 200);
 }
 
 
@@ -103,6 +104,9 @@ void Enemy::Collision(Base* b) {
         }
         break;
     case eType_Player:
+        if (Base::CollisionCircle(this,b)) {
+
+        }
         break;
     }
 }  
