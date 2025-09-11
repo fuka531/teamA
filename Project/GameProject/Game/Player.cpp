@@ -13,12 +13,12 @@ static TexAnim _idle[] = {
 };
 
 static TexAnim  _jumpUP[] = {
-	{ 7,10 },
+	{ 6,10 },
 
 
 };
 static TexAnim _jumpDOWN[] = {
-	{ 7,10 },
+	{ 6,10 },
 
 };
 
