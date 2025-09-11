@@ -1,6 +1,7 @@
 #include "Enemy.h"
 #include "Field.h"
 #include "Player.h"
+#include "Gameover.h"
 
 static TexAnim _run[] = {
     { 0,4 },
@@ -72,6 +73,8 @@ void Enemy::Collision(Base* b) {
     case eType_Player:
         if (Base::CollisionCircle(this,b)) {
 
+            KillAll();
+            Base::Add(new Gameover());
         }
         break;
     }
