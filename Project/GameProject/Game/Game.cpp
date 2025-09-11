@@ -27,6 +27,6 @@ void Game::Update()
 	m_cnt--;
 	if (m_cnt <= 0) {
 		Base::Add(new Object(CVector2D(m_scroll.x + SCREEN_WIDTH + 256, 850), true));
-		m_cnt = rand() %  120 + 60;
+		m_cnt = rand() %  200;
 	}
 }

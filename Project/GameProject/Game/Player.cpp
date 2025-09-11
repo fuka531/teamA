@@ -55,18 +55,22 @@ Player::Player(const CVector2D& pos, bool flip) :Base(eType_Player)
 void Player::StateIdle()
 {
 	//移動量
-	const float move_speed = 5;
+	
 	//移動フラグ
 	bool move_flag = false;
 	//ジャンプ力
 	const float jump_pow = 18;
-	m_pos.x += move_speed;
+	m_pos.x += m_move_speed;
 
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
 		//m_img.ChangeAnimation(7);
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
+	}
+	m_move_speed += 0.05;
+	if (m_move_speed >= 5) {
+		m_move_speed = 5;
 	}
 
 }
@@ -118,7 +122,7 @@ void Player::Collision(Base* b)
 		if (Base::CollisionRect(this, b)) {
 			//SetKill();
 			//b->SetKill();
-			m_pos.x -= 1;
+			m_move_speed = 4.0;
 		}
 		break;
 	case eType_Item:
