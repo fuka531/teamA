@@ -71,8 +71,7 @@ void Enemy::Collision(Base* b) {
             }
         break;
     case eType_Player:
-        if (Base::CollisionCircle(this,b)) {
-
+        if (Base::CollisionRect(this,b)) {
             KillAll();
             Base::Add(new Gameover());
         }
