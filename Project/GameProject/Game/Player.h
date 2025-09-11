@@ -13,6 +13,7 @@ private:
 	//’…’nƒtƒ‰ƒO
 	bool m_is_ground;
 	bool m_haskey;
+	float m_move_speed = 5;
 
 	//ó‘Ô
 	enum {

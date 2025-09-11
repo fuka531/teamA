@@ -6,13 +6,13 @@ Object::Object(const CVector2D& pos, bool flip) :Base(eType_Object) {
 	m_img = COPY_RESOURCE("Object", CImage);
 	//座標設定
 	m_pos = pos;
-	m_img.SetSize(200,200);
+	m_img.SetSize(180,180);
 	//中心位置設定
 	m_img.SetCenter(20, 40);
 
 	m_flip = flip;
 	//当たり判定矩形設定
-	m_rect = CRect(0, -30,150, 150);
+	m_rect = CRect(20, 0,110, 150);
 }
 
 void Object::Draw()
