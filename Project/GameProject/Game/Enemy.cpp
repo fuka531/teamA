@@ -33,7 +33,7 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
 
 void Enemy::StateIdle()
 {
-    const float move_speed = 4;
+    const float move_speed = 6;
 
     m_pos.x += -move_speed;
     /*bool move_flag = false;
@@ -70,7 +70,7 @@ void Enemy::Update() {
     //アニメーション更新
     m_img.UpdateAnimation();
 
-    if (m_pos.x < 0) {
+    if (m_pos.x < -200) {
         SetKill();
     }
 }
