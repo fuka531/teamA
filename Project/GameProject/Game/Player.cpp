@@ -96,7 +96,7 @@ void Player::Update()
 	m_pos += m_vec;
 
 	//スクロール設定
-	m_scroll.x = m_pos.x - 1280 / 2 ;
+	m_scroll.x = m_pos.x - 1280 / 1.5 ;
 	//アニメーション更新
 	m_img.UpdateAnimation();
 
@@ -118,6 +118,7 @@ void Player::Collision(Base* b)
 		if (Base::CollisionRect(this, b)) {
 			//SetKill();
 			//b->SetKill();
+			m_pos.x -= 1;
 		}
 		break;
 	case eType_Item:
