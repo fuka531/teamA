@@ -56,11 +56,12 @@ void Player::StateIdle()
 	//移動フラグ
 	bool move_flag = false;
 	//ジャンプ力
-	const float jump_pow = 12;
+	const float jump_pow = 18;
 	m_pos.x += move_speed;
 
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
+		//m_img.ChangeAnimation(7);
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
 	}
@@ -88,16 +89,16 @@ void Player::Update()
 		m_is_ground = false;
 
 	//重力による落下
-	//m_vec.y += GRAVITY;
-	//m_pos += m_vec;
+	m_vec.y += GRAVITY;
+	m_pos += m_vec;
 
 	//スクロール設定
-	m_scroll.x = m_pos.x - 1280 / 2 / 3;
+	m_scroll.x = m_pos.x - 1280 / 2 ;
 	//アニメーション更新
 	m_img.UpdateAnimation();
 
 }
-/*void Player::Collision(Base* b)
+void Player::Collision(Base* b)
 {
 	switch(b ->m_type) {
 	case eType_Field:
@@ -110,12 +111,12 @@ void Player::Update()
 			}
 			break;
 		}
-	case eType_Enemy:
-		if (Base::Collision(this, b)) {
+	case eType_Object:
+		if (auto s = dynamic_cast<Base*>(b)) {
 			SetKill();
 			b->SetKill();
 		}
 		break;
 	}
 }
-*/
+

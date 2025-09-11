@@ -1,7 +1,7 @@
 #pragma once
 enum {
     eType_Field,
-    eType_Player,
+   
     eType_Enemy,
     eType_Goal,
     eType_Item,
@@ -10,6 +10,7 @@ enum {
     eType_Effect,
     eType_Scene,
     eType_Clear,
+    eType_Player,
 	eType_Object,
 };
 
