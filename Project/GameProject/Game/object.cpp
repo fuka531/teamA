@@ -12,7 +12,7 @@ Object::Object(const CVector2D& pos, bool flip) :Base(eType_Object) {
 
 	m_flip = flip;
 	//“–‚½‚è”»’è‹éŒ`İ’è
-	m_rect = CRect(-20, -40, 20, 0);
+	m_rect = CRect(0, -30,150, 150);
 }
 
 void Object::Draw()
