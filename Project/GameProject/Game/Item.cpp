@@ -10,10 +10,7 @@ Item::Item(const CVector2D& pos):Base(eType_Item)
 
 void Item::Update()
 {
-	if (PUSH(CInput::eButton1))
-	{
-		SetKill();
-	}
+
 }
 
 void Item::Draw()

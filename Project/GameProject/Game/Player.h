@@ -12,6 +12,7 @@ private:
 	bool   m_flip;
 	//’…’nƒtƒ‰ƒO
 	bool m_is_ground;
+	bool m_haskey;
 
 	//ó‘Ô
 	enum {
