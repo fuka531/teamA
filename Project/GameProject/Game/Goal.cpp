@@ -16,7 +16,7 @@ void Goal::Update()
 
 void Goal::Draw()
 {
-	m_goal.SetSize(110*3,97*3);
+	m_goal.SetSize(110*3.5,97*3.5);
 	m_goal.SetPos(m_pos);
 	m_goal.Draw();
 
