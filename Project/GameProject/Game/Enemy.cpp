@@ -1,6 +1,20 @@
 #include "Enemy.h"
 #include "Field.h"
+#include "Player.h"
 
+static TexAnim _run[] = {
+    { 0,4 },
+    { 1,5 },
+    { 2,4 },
+    { 3,5 },
+    { 4,4 },
+    { 5,5 },
+
+};
+
+TexAnimData Enemy::_anim_data[] = {
+    ANIMDATA(_run),
+};
 
 Enemy::Enemy(const CVector2D& p, bool flip) :
     Base(eType_Enemy) {
@@ -11,15 +25,15 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
     m_pos_old = m_pos = p;
     m_flip = flip;
     m_is_ground = true;
-    m_rect = CRect(-32, -64, 32, 0);
-    m_img.SetCenter(32, 32);
-    m_img.SetSize(64, 64);
+    m_rect = CRect(-100, -200, 100, 0);
+    m_img.SetCenter(100, 200);
+    m_img.SetSize(200, 200);
 }
 
 
 void Enemy::StateIdle()
 {
-    const float move_speed = 6;
+    const float move_speed = 4;
     bool move_flag = false;
     Base* player = Base::FindObject(eType_Player);
     if (player) {
@@ -39,47 +53,13 @@ void Enemy::StateIdle()
             move_flag = true;
         }
     }
-    //移動中なら
-    if (move_flag) {
-        //走るアニメーション
-        m_img.ChangeAnimation(eAnimRun);
-    }
-    else {
-        //待機アニメーション
-        m_img.ChangeAnimation(eAnimIdle);
-    }
 
 }
 
-void Enemy::StateDamage()
-{
-    m_img.ChangeAnimation(eAnimDamage, false);
-    if (m_img.CheckAnimationEnd()) {
-        m_state = eState_Idle;
-    }
-}
-
-void Enemy::StateDown()
-{
-}
 
 void Enemy::Update() {
     m_pos_old = m_pos;
-    switch (m_state) {
-        //通常状態
-    case eState_Idle:
-        StateIdle();
-        break;
-        //ダメージ状態
-    case eState_Damage:
-        StateDamage();
-        break;
-        //ダウン状態
-    case eState_Down:
-        StateDown();
-        break;
-    }
-    //落ちていたら落下状態へ以降
+    //落ちていたら落下状態へ移行
     if (m_is_ground && m_vec.y > GRAVITY * 4)
         m_is_ground = false;
     //重力による落下
@@ -103,7 +83,8 @@ void Enemy::Draw() {
 }
 
 void Enemy::Collision(Base* b) {
-  /*
+  
+    
     switch (b->m_type) {
     case eType_Field:
         if (Field* f = dynamic_cast<Field*>(b)) {
@@ -123,7 +104,9 @@ void Enemy::Collision(Base* b) {
         }
         break;
     case eType_Player:
+        if (Base::CollisionCircle(this,b)) {
+
+        }
         break;
     }
-    */
 }  
