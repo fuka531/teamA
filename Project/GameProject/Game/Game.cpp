@@ -9,15 +9,15 @@
 Game::Game() :Base(eType_Scene)
 {
 	Base::Add(new Field());
-	Base::Add(new Item());
+	Base::Add(new Item(CVector2D(3500,500)));
 	Base::Add(new Goal(CVector2D(5000, 700)));
 	Base::Add(new Player(CVector2D(300, 1000), false));
 	m_cnt = 0;
 
 
-	Base::Add(new Enemy(CVector2D(800, 1000), true));
 	Base::Add(new Enemy(CVector2D(1200, 1000), true));
-	Base::Add(new Enemy(CVector2D(1500, 1000), true));
+	Base::Add(new Enemy(CVector2D(1800, 1000), true));
+	Base::Add(new Enemy(CVector2D(2400, 1000), true));
 
 }
 void Game::Update()
