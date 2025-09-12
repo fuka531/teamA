@@ -6,6 +6,7 @@ private:
 	//アニメーションの種類
 	enum {
 		eAnimIdle,
+		eAnimJump
 	};
 
 	CImage m_img;
@@ -18,12 +19,14 @@ private:
 	//状態
 	enum {
 		eState_Idle,
+		eState_Jump,
 	};
 
 	//状態変数
 	int m_state;
 	//各状態での挙動
 	void StateIdle();
+	void StateJump();
 public:
 	Player(const CVector2D& pos,bool flip);
 	void Update();
