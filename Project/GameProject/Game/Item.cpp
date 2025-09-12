@@ -16,9 +16,10 @@ void Item::Update()
 void Item::Draw()
 {
 	m_key.SetPos(GetScreenPos(m_pos));
+	m_key.SetAng(-100);
 	m_key.SetSize(100,100);
 	m_key.Draw();
-	DrawRect();
+	//DrawRect();
 }
 
 void Item::Collision(Base* b)

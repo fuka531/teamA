@@ -48,14 +48,15 @@ Player::Player(const CVector2D& pos, bool flip) :Base(eType_Player)
 	m_haskey = false;
 
 	m_flip = flip;
+
+	m_state = eState_Idle;
+	m_is_ground = true;
 	//当たり判定用矩形設定
 	m_rect = CRect(-100, -400, 100, 0);
 
 }
 void Player::StateIdle()
 {
-	//移動量
-	
 	//移動フラグ
 	bool move_flag = false;
 	//ジャンプ力
@@ -64,15 +65,34 @@ void Player::StateIdle()
 
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
-		//m_img.ChangeAnimation(7);
 		m_vec.y = -jump_pow;
 		m_is_ground = false;
+	}
+	if (!m_is_ground) {
+		if (m_vec.y < 0)
+			//上昇アニメーション
+			m_img.ChangeAnimation(eAnimJump, false);
+	}
+	else
+	{
+		//移動中なら
+		if (m_is_ground==true) {
+			//走るアニメーション
+			m_img.ChangeAnimation(eAnimIdle);
+		}
 	}
 	m_move_speed += 0.05;
 	if (m_move_speed >= 5) {
 		m_move_speed = 5;
 	}
 
+}
+void Player::StateJump()
+{
+	m_img.ChangeAnimation(eAnimJump, false);
+	if (m_img.CheckAnimationEnd()) {
+		m_state = eState_Idle;
+	}
 }
 void Player::Draw()
 {
@@ -81,13 +101,16 @@ void Player::Draw()
 	//描画
 	m_img.Draw();
 	//当たり判定の矩形の表示
-	DrawRect();
+//	DrawRect();
 }
 void Player::Update()
 {
 	switch (m_state) {
 	case eState_Idle:
 		StateIdle();
+		break;
+	case eState_Jump:
+		StateJump();
 		break;
 	}
 

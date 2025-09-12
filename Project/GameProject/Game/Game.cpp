@@ -9,8 +9,8 @@
 Game::Game() :Base(eType_Scene)
 {
 	Base::Add(new Field());
-	Base::Add(new Item(CVector2D(3500,500)));
-	Base::Add(new Goal(CVector2D(7000, 700)));
+	Base::Add(new Item(CVector2D(4500,500)));
+	Base::Add(new Goal(CVector2D(8000, 700)));
 	Base::Add(new Player(CVector2D(300, 1000), false));
 	m_cnt = 0;
 
@@ -27,6 +27,6 @@ void Game::Update()
 	m_cnt--;
 	if (m_cnt <= 0) {
 		Base::Add(new Object(CVector2D(m_scroll.x + SCREEN_WIDTH + 256, 850), true));
-		m_cnt = rand() %  200;
+		m_cnt = rand() %  250;
 	}
 }

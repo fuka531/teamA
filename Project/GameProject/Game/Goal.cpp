@@ -18,7 +18,7 @@ void Goal::Draw()
 	m_goal.SetPos(GetScreenPos(m_pos));
 	m_goal.Draw();
 
-	DrawRect();
+	//DrawRect();
 }
 
 void Goal::Collision(Base* b)
