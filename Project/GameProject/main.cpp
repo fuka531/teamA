@@ -180,12 +180,14 @@ void Init(void)
 	ADD_RESOURCE("Clear", CImage::CreateImage("Image/open.png"));
 	ADD_RESOURCE("Gameover", CImage::CreateImage("Image/gameover.png"));
 
+	SOUND("Kill")->Load("Sound/Gore_Wet_4.wav");
 
 
 	//Base::Add(new Field());
 	//Base::Add(new Item());
 	//Base::Add(new Goal(CVector2D(2000,700)));
 	Base::Add(new Title());
+	//Base::Add(new Enemy(CVector2D(-200, 0), false));
 
 
 

@@ -46,7 +46,6 @@ Player::Player(const CVector2D& pos, bool flip) :Base(eType_Player)
 	//着地フラグ
 	m_is_ground = true;
 	m_haskey = false;
-
 	m_flip = flip;
 
 	m_state = eState_Idle;
@@ -62,7 +61,6 @@ void Player::StateIdle()
 	//ジャンプ力
 	const float jump_pow = 18;
 	m_pos.x += m_move_speed;
-
 	//ジャンプ
 	if (m_is_ground && PUSH(CInput::eButton2)) {
 		m_vec.y = -jump_pow;

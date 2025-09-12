@@ -1,13 +1,13 @@
 #pragma once
 enum {
     eType_Field,
-    eType_Enemy,
     eType_Goal,
     eType_Item,
     eType_Player_Attack,
     eType_Enemy_Attack,
     eType_Effect,
     eType_Scene,
+    eType_Enemy,
     eType_Clear,
     eType_Player,
 	eType_Object,

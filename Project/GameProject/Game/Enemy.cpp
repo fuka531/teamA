@@ -73,6 +73,7 @@ void Enemy::Collision(Base* b) {
     case eType_Player:
         if (Base::CollisionRect(this,b)) {
             KillAll();
+            SOUND("Kill")->Play();
             Base::Add(new Gameover());
         }
         break;
