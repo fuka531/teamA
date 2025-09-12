@@ -68,7 +68,7 @@ void Enemy::Collision(Base* b) {
                 m_vec.y = 0;
                 m_is_ground = true;
             }
-            }
+        }
         break;
     case eType_Player:
         if (Base::CollisionRect(this,b)) {
