@@ -26,7 +26,7 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
     m_pos_old = m_pos = p;
     m_flip = flip;
     m_is_ground = true;
-    m_rect = CRect(-100, -200, 100, 0);
+    m_rect = CRect(-60, -200, 60, 0);
     m_img.SetCenter(100, 200);
     m_img.SetSize(200,200);
 }
@@ -55,7 +55,7 @@ void Enemy::Draw() {
     //•`‰æ
     m_img.Draw();
     //“–‚½‚è”»’è‹éŒ`‚Ì•\Ž¦
-    //DrawRect();
+    DrawRect();
 
 }
 
