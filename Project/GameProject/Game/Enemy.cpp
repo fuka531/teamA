@@ -28,7 +28,7 @@ Enemy::Enemy(const CVector2D& p, bool flip) :
     m_is_ground = true;
     m_rect = CRect(-100, -200, 100, 0);
     m_img.SetCenter(100, 200);
-    m_img.SetSize(200, 200);
+    m_img.SetSize(200,200);
 }
 
 

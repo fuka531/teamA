@@ -8,7 +8,7 @@ Object::Object(const CVector2D& pos, bool flip) :Base(eType_Object) {
 	m_pos = pos;
 	m_img.SetSize(300,300);
 	//’†SˆÊ’uİ’è
-	m_img.SetCenter(0,0);
+	m_img.SetCenter(100,100);
 
 	m_flip = flip;
 	//“–‚½‚è”»’è‹éŒ`İ’è
