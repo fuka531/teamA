@@ -6,9 +6,9 @@ Object::Object(const CVector2D& pos, bool flip) :Base(eType_Object) {
 	m_img = COPY_RESOURCE("Object", CImage);
 	//座標設定
 	m_pos = pos;
-	m_img.SetSize(180,180);
+	m_img.SetSize(300,300);
 	//中心位置設定
-	m_img.SetCenter(20, 40);
+	m_img.SetCenter(0,0);
 
 	m_flip = flip;
 	//当たり判定矩形設定
