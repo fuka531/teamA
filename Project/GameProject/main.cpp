@@ -182,8 +182,6 @@ void Init(void)
 
 
 
-
-
 	//Base::Add(new Field());
 	//Base::Add(new Item());
 	//Base::Add(new Goal(CVector2D(2000,700)));
